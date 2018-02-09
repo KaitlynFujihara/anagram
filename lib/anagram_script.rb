@@ -1,3 +1,1 @@
-require('rspec')
-require('anagram')
-require('pry')
+#!/usr/bin/ruby
