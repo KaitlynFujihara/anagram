@@ -24,4 +24,9 @@ describe('#anagram') do
   expect(antigram.anagram_check('hi bye')).to(eq("This is an antigram"))
   end
 
+  it("if a phrase has an anagram or an antigram the it will say 'there was an antigram included' or 'there was an antigram included'") do
+  check_phrase = Anagram.new('I like to drink tea and eat cake')
+  expect(check_phrase.anagram_check('I like to drink tea and eat cake')).to(eq("There was an anagram"))
+  end
+
 end

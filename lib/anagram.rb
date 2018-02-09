@@ -16,8 +16,8 @@ class Anagram
     letter_array= word_downcase.split("")
     word_array1= word_array[0].split("")
     word_array2= word_array[1].split("")
-
     vowels=["a","e","i","o","u","y"]
+
     if (letter_array & vowels).any? == false
       "You need to input actual words!"
     elsif word_array[0].chars.sort == word_array[1].chars.sort
@@ -25,7 +25,9 @@ class Anagram
     elsif (word_array1 & word_array2).any? == false
       "This is an antigram"
     else
-      "This is not an anagram"  
+      "This is not an anagram"
     end
+    def phrase_test(word_array)
+      word_array.each do
   end
 end
