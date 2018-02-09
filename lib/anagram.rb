@@ -9,11 +9,15 @@ class Anagram
   def downcase(new_word)
     word_downcase = new_word.downcase
   end
-  
-  def anagram_check(new_word)
-    word_downcase = new_word.downcase
+
+  def anagram_check(word_downcase)
+    new_anagram = Anagram.new(word_downcase)
     word_array= word_downcase.split(" ")
-    if word_array[0].chars.sort == word_array[1].chars.sort
+    vowel_test= word_downcase.split("")
+    vowels=["a","e","i","o","u","y"]
+    if (vowel_test & vowels).any? == false
+      "You need to input actual words!"
+    elsif word_array[0].chars.sort == word_array[1].chars.sort
       "This is an anagram"
     else
       "This is not an anagram"
