@@ -19,4 +19,9 @@ describe('#anagram') do
   expect(new_anagram_check.anagram_check('tea eat')).to(eq("This is an anagram"))
   end
 
+  it("if two words have no matching letters, it will return 'this is an antigram'") do
+  antigram = Anagram.new('hi bye')
+  expect(antigram.anagram_check('hi bye')).to(eq("This is an antigram"))
+  end
+
 end
