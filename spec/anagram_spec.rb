@@ -24,8 +24,8 @@ describe('#anagram') do
   end
 
   it("if a phrase has an anagram or an antigram the it will say 'there was an antigram included' or 'there was an antigram included'") do
-  check_phrase = Anagram.new('hi bye','h ibye')
-  expect(check_phrase.anagram_check('hibye')).to(eq("This is an antigram"))
+  check_phrase = Anagram.new('hi bye')
+  expect(check_phrase.only_letters('hibye')).to(eq("This is an antigram"))
   end
 
 end
