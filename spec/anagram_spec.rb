@@ -8,7 +8,6 @@ describe('#anagram') do
   expect(new_anagram_downcase.downcase('TeA EaT')).to(eq("tea eat"))
   end
 
-
   it("if a string does not include a vowel (a, e, i ,o ,u, y) it is not a word and will return 'You need to input actual words!'") do
   new_anagram_vowel = Anagram.new('sdfgh jkl')
   expect(new_anagram_vowel.anagram_check('sdfgh jkl')).to(eq('You need to input actual words!'))
@@ -25,8 +24,8 @@ describe('#anagram') do
   end
 
   it("if a phrase has an anagram or an antigram the it will say 'there was an antigram included' or 'there was an antigram included'") do
-  check_phrase = Anagram.new('I like to drink tea and eat cake')
-  expect(check_phrase.anagram_check('I like to drink tea and eat cake')).to(eq("There was an anagram"))
+  check_phrase = Anagram.new('hi bye','h ibye')
+  expect(check_phrase.anagram_check('hibye')).to(eq("This is an antigram"))
   end
 
 end
