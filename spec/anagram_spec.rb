@@ -5,7 +5,7 @@ require('pry')
 describe('#anagram') do
   it("if words are upper and lower case, make them all lower case to be compared") do
   new_anagram_downcase = Anagram.new('TeA EaT')
-  expect(new_anagram_downcase.downcase('TeA EaT')).to(eq("tea eat"))
+  expect(new_anagram_downcase.downcase_one_word('TeA EaT')).to(eq("tea eat"))
   end
 
   it("if a string does not include a vowel (a, e, i ,o ,u, y) it is not a word and will return 'You need to input actual words!'") do
@@ -23,9 +23,8 @@ describe('#anagram') do
   expect(antigram.anagram_check('hi bye')).to(eq("This is an antigram"))
   end
 
-  it("if a phrase has an anagram or an antigram the it will say 'there was an antigram included' or 'there was an antigram included'") do
-  check_phrase = Anagram.new('hi bye')
-  expect(check_phrase.only_letters('hibye')).to(eq("This is an antigram"))
+  it("if a phrase has an anagram then it will return 'This phrase is an anagram' if it is an antigram it will return 'This phrase is an antigram'") do
+  check_phrase = Phrase.new('tea eat', 'te aeat')
+  expect(check_phrase.anagram_check_phrase('tea eat', 'te aeat')).to(eq("This phrase is an anagram"))
   end
-
 end
